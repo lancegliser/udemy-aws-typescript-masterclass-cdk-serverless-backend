@@ -44,3 +44,9 @@ If you have multiple:
 ```
 cdk deploy --all
 ```
+
+# Clean up
+
+```
+cdk destroy
+```
