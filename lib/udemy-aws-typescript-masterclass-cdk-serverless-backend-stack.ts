@@ -1,5 +1,6 @@
-import { Stack, StackProps } from 'aws-cdk-lib';
+import {Duration, Stack, StackProps} from 'aws-cdk-lib';
 import { Construct } from 'constructs';
+import {Bucket} from "aws-cdk-lib/aws-s3";
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class UdemyAwsTypescriptMasterclassCdkServerlessBackendStack extends Stack {
@@ -8,9 +9,12 @@ export class UdemyAwsTypescriptMasterclassCdkServerlessBackendStack extends Stac
 
     // The code that defines your stack goes here
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'UdemyAwsTypescriptMasterclassCdkServerlessBackendQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    new Bucket(this, 'someBucket', {
+      lifecycleRules: [
+        {
+          expiration: Duration.days(5),
+        }
+      ]
+    });
   }
 }
