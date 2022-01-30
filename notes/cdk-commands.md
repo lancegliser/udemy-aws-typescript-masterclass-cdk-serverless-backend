@@ -39,3 +39,8 @@ Actual:
 ```
 cdk deploy
 ```
+
+If you have multiple:
+```
+cdk deploy --all
+```
