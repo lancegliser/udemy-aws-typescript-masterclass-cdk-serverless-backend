@@ -23,9 +23,19 @@ Permissions required (Full access or admin):
 * Lamda
 * S3
 
+This creates a `Stack` in your account named `CDKToolkit` which creates permissions,
+roles, etc required by the actual deployment of your project's `Stack`.
+
 # Regularly
 
-Generate a CloudFormation Stack json file used in deployment
+Optional: Generate a CloudFormation Stack json file used in deployment
+
 ```
 cdk synth
+```
+
+Actual:
+
+```
+cdk deploy
 ```
